@@ -4,11 +4,11 @@
  */
 var minOperations = function(boxes) {
   let ones =[];
-  boxes.split("").filter((elem, i, arr)=>{
-    if(elem==1){
+  for(let i = 0 ; i < boxes.length ; i++){
+    if(boxes[i]==1){
       ones.push(i);
     }
-  });
+  }
   let res = [];
   for(let i = 0 ; i < boxes.length ; i++){
       let ops=0;
