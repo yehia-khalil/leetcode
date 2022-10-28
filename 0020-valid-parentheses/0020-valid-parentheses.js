@@ -6,22 +6,26 @@ var isValid = function(s) {
   let stack=[];
   let close="])}";
   for(let i = 0 ; i < s.length ; i++){
-    switch(s[i]){
-      case "[":
-        stack.push("]");
-        break;
-      case "(":
-        stack.push(")");
-        break;
-      case "{":
-        stack.push("}");
-        break;
-      default:
-        if(stack.pop()!==s[i]){
-          return false;
-        }
-      break;
-    }
+      switch(s[i]){
+        case "]":
+          if(stack.pop()!=="["){
+            return false;
+          }
+          break;
+        case ")":
+          if(stack.pop()!=="("){
+            return false;
+          }
+          break;
+        case "}":
+          if(stack.pop()!=="{"){
+            return false;
+          }
+          break;
+        default:
+          stack.push(s[i]);
+          break;
+      }
   }
   
   return stack.length==0;
