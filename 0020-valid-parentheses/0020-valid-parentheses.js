@@ -17,9 +17,7 @@ var isValid = function(s) {
         stack.push("}");
         break;
       default:
-        if(stack[stack.length-1]===s[i]){
-          stack.pop();
-        }else{
+        if(stack.pop()!==s[i]){
           return false;
         }
       break;
