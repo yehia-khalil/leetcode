@@ -3,14 +3,10 @@
  * @return {number[]}
  */
 var runningSum = function(nums) {
-    let s = [];
-    nums.forEach((elem,i,arr)=>{
-      if(i>0){
-        s.push(elem+s[i-1]);
-        return;
+    return nums.map(function(elem,i){
+      if(nums[i-1]){
+        return nums[i]=nums[i]+nums[i-1]
       }
-      s.push(elem);
-      return;
+      return nums[i];
     })
-    return s;
 };
