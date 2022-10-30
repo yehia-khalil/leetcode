@@ -3,12 +3,13 @@
  * @return {boolean}
  */
 var checkIfExist = function(arr) {
+  let map={};
     for(let i = 0 ; i < arr.length ; i++){
-      for(let j = 0 ; j < arr.length ; j++){
-        if(arr[i]==arr[j]*2 && i!=j){
-          return true;
-        }
+      if(map[arr[i]/2] || map[arr[i]*2]){
+        return true;
       }
+      map[arr[i]]=1;
     }
+  
   return false;
 };
