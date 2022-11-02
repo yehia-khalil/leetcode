@@ -13,8 +13,6 @@ var removeDuplicates = function(nums) {
       x++;
       nums[x]=worm;
       ptr=nums[x];
-    }else{
-      continue;
     }
   }
   nums.length = x;
