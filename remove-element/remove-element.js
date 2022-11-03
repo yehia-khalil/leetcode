@@ -5,12 +5,19 @@
  */
 var removeElement = function(nums, val) {
   let i = 0;
-  loop:
-   while(i<nums.length){
-     if(nums[i]===val){
-       nums.splice(i,1);
-       continue loop;
-     }
-     i++;
-   }
+  let c = 0;
+  while(i < nums.length){
+    if(i==nums.length-c){
+      break;
+    }
+    if(nums[i]==val){
+      let temp = nums[nums.length-c-1];
+      nums[nums.length-c-1]=nums[i];
+      nums[i]=temp;
+      c++;
+    }else{
+      i++;
+    }
+  }
+  return nums.length-c;
 };
