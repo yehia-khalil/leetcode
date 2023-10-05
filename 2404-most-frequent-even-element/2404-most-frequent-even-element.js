@@ -14,7 +14,6 @@ var mostFrequentEven = function(nums) {
             map[item]=1;
         }
     }
-    console.log(map)
     if(Object.keys(map).length==0){
         return -1;
     }
