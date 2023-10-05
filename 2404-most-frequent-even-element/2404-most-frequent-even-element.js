@@ -17,17 +17,21 @@ var mostFrequentEven = function(nums) {
     if(Object.keys(map).length==0){
         return -1;
     }
-    let memo = {};
+    let max= -Infinity;
+    let num = Infinity;
     for(item in map){
-        if(!memo[map[item]]){
-            memo[map[item]]=[item]
-        }else{
-            memo[map[item]]=[...memo[map[item]],item]
+        if(map[item]>=max){
+            max=map[item];
         }
     }
-    let min=undefined
-    for(item in memo){
-        min=Math.min(...memo[item]);
+    console.log(map)
+    console.log(max)
+    for(item in map){
+        if(map[item] == max){
+            if(Number(item)<num){
+                num=Number(item)
+            }
+        }
     }
-    return min??-1;
+    return num;
 };
