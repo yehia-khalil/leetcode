@@ -3,9 +3,12 @@
  * @return {boolean}
  */
 var isPowerOfTwo = function(n) {
-   while(n>=1){
-    if(n==1) return true;
-    n/=2;       
-   }
-    return false;
+    if (n == 1) {
+        return true;
+    }   
+    if(n < 1){
+        return false;
+    }
+
+    return isPowerOfTwo(n/2);
 };
